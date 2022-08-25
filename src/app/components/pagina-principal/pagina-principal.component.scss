@@ -1,0 +1,60 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+  
+}
+.div-principal {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    color: #000;
+  
+   
+
+}
+
+.div-principal p{
+    margin: 0%;
+    text-align: center;
+    font-size: 2rem;
+    
+}
+nav{
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+    
+}
+
+nav ul,
+nav li{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }

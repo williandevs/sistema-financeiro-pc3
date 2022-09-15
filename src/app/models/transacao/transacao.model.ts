@@ -1,10 +1,10 @@
 export interface Transacao{
-    id: number;
-    ativo: boolean;
-    createdAt: string;
-    updatedAt: string;
+    id?: number;
+    ativo?: boolean;
+    createdAt?: string;
+    updatedAt?: string;
     tipo: string;
     valor: number;
-    saldo: number;
+    saldo?: number;
     descricao: string;
     }

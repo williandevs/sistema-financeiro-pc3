@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Relatório</h2>
+<mat-dialog-content class="mat-typography">
+
+  <p>
+
+     
+  [(ngModel)]="nome" 
+  </p>
+ 
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id
+ rem sunt dicta numquam dolores enim? Minima recusandae, et exercitationem dolorum 
+officia ipsum deserunt laborum dolor. Nesciunt at deleniti mollitia modi.
+ 
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fechar</button>
+  <button  (click)="imprimir()" mat-button [mat-dialog-close]="true" cdkFocusInitial>Imprimir</button>
+  
+</mat-dialog-actions>

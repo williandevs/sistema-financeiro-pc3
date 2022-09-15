@@ -1,0 +1,27 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+  
+}
+
+.links{
+    display: flex;
+    gap: 10px;
+}
+
+.links p {
+    font-size: 15px;
+}
+.links a{
+    color: yellow;
+    text-decoration: none;
+}
+

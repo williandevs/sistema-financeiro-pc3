@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ProdutoModule } from './produto.module';
+
+import { ProdutoModel } from './produto.model';
+
 
 
 const API = environment.urlApi
@@ -13,22 +17,39 @@ const RECURSO = API + '/produto'
 })
 export class ProdutoService {
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
+  constructor(private http: HttpClient,
+    private snackBar: MatSnackBar) { }
 
-  selectAll() {
-    return this.httpClient.get<ProdutoModule[]>(RECURSO)
+  showMensage(msg: string): void {
+    this.snackBar.open(msg, "x", {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top"
+    })
   }
 
-  /*  selecAll(){
-     return [
-       { id: 1, createdAt: 'dado1', updatedAt: '22/08/2022', nome: 'produto1', valorCompra: 200, valorVenda: 300, estoque: 10, descricao: 'produto de teste' },
-       { id: 2, createdAt: 'dado1', updatedAt: '22/08/2022', nome: 'produto1', valorCompra: 200, valorVenda: 300, estoque: 10, descricao: 'produto de teste' },
-       { id: 3, createdAt: 'dado1', updatedAt: '22/08/2022', nome: 'produto1', valorCompra: 200, valorVenda: 300, estoque: 10, descricao: 'produto de teste' },
-       { id: 4, createdAt: 'dado1', updatedAt: '22/08/2022', nome: 'produto1', valorCompra: 200, valorVenda: 300, estoque: 10, descricao: 'produto de teste' },
-       { id: 5, createdAt: 'dado1', updatedAt: '22/08/2022', nome: 'produto1', valorCompra: 200, valorVenda: 300, estoque: 10, descricao: 'produto de teste' },
-       { id: 6, createdAt: 'dado1', updatedAt: '22/08/2022', nome: 'produto1', valorCompra: 200, valorVenda: 300, estoque: 10, descricao: 'produto de teste' },
-     ] 
-   } */
+
+
+  selectAll() {
+    return this.http.get<ProdutoModel[]>(RECURSO);
+  }
+
+  selectById(id: string) {
+    return this.http.get<ProdutoModel[]>(RECURSO + "/" + id);
+  }
+
+
+  insert(product: ProdutoModel): Observable<ProdutoModel> {
+    return this.http.post<ProdutoModel>(RECURSO, product)
+  }
+
+  upadate(product: ProdutoModel): Observable<ProdutoModel> {
+    return this.http.put<ProdutoModel>(RECURSO + "/" + product.id, product)
+  }
+
+
+
+  delete(id: string) {
+    return this.http.delete<ProdutoModel>(RECURSO + "/" + id);
+  }
 }

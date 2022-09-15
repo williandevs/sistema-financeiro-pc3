@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Mudar</h1>
+  <mat-form-field class="example-full-width my-3 me-3" appearance="fill">
+  <mat-label >Descrição</mat-label>
+  <input matInput  [(ngModel)]="nome"  #descricaoText maxlength="256" placeholder="Transação do produto..">
+  <mat-hint align="start"><strong>Produto</strong> </mat-hint>
+  <mat-hint align="end">{{descricaoText.value.length}} / 256</mat-hint>
+</mat-form-field>
+
+<mat-form-field appearance="fill" floatLabel="always" class="my-3 me-3">
+  <mat-label>Valor da Compra</mat-label>
+  <input matInput  [(ngModel)]="valorCompra" type="number" class="example-right-align" placeholder="0">
+  <span matPrefix>R$ &nbsp;</span>
+
+</mat-form-field>
+
+<mat-form-field appearance="fill" floatLabel="always" class="my-3 me-3">
+  <mat-label>Valor do produto</mat-label>
+  <input matInput  [(ngModel)]="valorVenda" type="number"  class="example-right-align" placeholder="0">
+  <span matPrefix>R$ &nbsp;</span>
+
+</mat-form-field>
+
+
+<mat-form-field appearance="fill">
+  <mat-label>Quantidade</mat-label>
+  <input matInput  [(ngModel)]="estoque"  type="number" placeholder="Ex. 12">
+  <span matSuffix></span>
+</mat-form-field>
+
+
+
+<div class="example-button-row p-2">
+  <button style="margin-right:10px ;"  mat-raised-button [ngStyle]="{'background':'green', 'color':'#fff'}" (click)="salvar()">salvar</button> 
+  <button  mat-raised-button  [ngStyle]="{'background':'red', 'color':'#fff'}" (click)="cancelar()" >Cancelar</button>
+</div>
+
+</div>
+

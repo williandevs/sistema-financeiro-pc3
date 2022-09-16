@@ -16,18 +16,17 @@ export class DialogViewsComponent implements OnInit {
 
   produto: ProdutoModel = {} as ProdutoModel
 
-  nome: string = '';
-  valorCompra: number = 0;
-  valorVenda: number = 0;
-  estoque: number = 0;
+  
 
 
   constructor(public dialogRef: MatDialogRef<DialogViewsComponent>,
     private produtoService: ProdutoService,
+
     @Inject(MAT_DIALOG_DATA) public data: any,) { }
 
 
   ngOnInit(): void {
+    this.produto = this.data.produto
   
   }
 
@@ -36,7 +35,11 @@ export class DialogViewsComponent implements OnInit {
 
   imprimir() {
     const doc = new jsPDF();
-    doc.text('', 10, 10);
+    doc.text(`
+     ${this.produto.nome}
+     ${this.produto.valorCompra} 
+     ${this.produto.valorVenda}
+     ${this.produto.estoque} `, 10, 10);
     doc.save("produto.pdf"); // will save the file in the current working directory
   }
   

@@ -14,58 +14,58 @@
     <!-- id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> id</th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell *matCellDef="let produto"> {{produto.id}} </td>
     </ng-container>
   
     <!-- nome Column -->
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Data Criação </th>
-      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+      <td mat-cell *matCellDef="let produto"> {{produto.nome}} </td>
     </ng-container>
   
     <!-- updatedAt  Column -->
     <ng-container matColumnDef="valorVenda  ">
       <th mat-header-cell *matHeaderCellDef> data modifica~ção</th>
-      <td mat-cell *matCellDef="let element"> {{element.valorVenda }} </td>
+      <td mat-cell *matCellDef="let produto"> {{produto.valorVenda }} </td>
     </ng-container>
   
  
     <!-- valorCompra Column -->
     <ng-container matColumnDef="valorCompra">
       <th mat-header-cell *matHeaderCellDef> Valor da Compra </th>
-      <td mat-cell *matCellDef="let element"> {{element.valorCompra}} </td>
+      <td mat-cell *matCellDef="let produto"> {{produto.valorCompra}} </td>
     </ng-container>
  
     <!-- valorVenda Column -->
     <ng-container matColumnDef="valorVenda">
       <th mat-header-cell *matHeaderCellDef> valor da Venda </th>
-      <td mat-cell *matCellDef="let element"> {{element.valorVenda}} </td>
+      <td mat-cell *matCellDef="let produto"> {{produto.valorVenda}} </td>
     </ng-container>
   
     <!-- estoque Column -->
     <ng-container matColumnDef="estoque">
       <th mat-header-cell *matHeaderCellDef> Estoque </th>
-      <td mat-cell *matCellDef="let element"> {{element.estoque}} </td>
+      <td mat-cell *matCellDef="let produto"> {{produto.estoque}} </td>
     </ng-container>
  
     <!-- descricao Column -->
     <ng-container matColumnDef="descricao">
       <th mat-header-cell *matHeaderCellDef> descricao Produto </th>
-      <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+      <td mat-cell *matCellDef="let produto"> {{produto.descricao}} </td>
     </ng-container>
  
  
     <ng-container matColumnDef="acao">
       <th mat-header-cell *matHeaderCellDef> Ação </th>
-      <td mat-cell *matCellDef="let element"> 
+      <td mat-cell *matCellDef="let produto"> 
 
         <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-          <mat-icon (click)="openDialogAddProduto(element)" [ngStyle]="{'color':'blue'}">create</mat-icon>
+          <mat-icon (click)="openDialogAddProduto(produto)" [ngStyle]="{'color':'blue'}">create</mat-icon>
         </button>
-        <button (click)="deleteElement(element.id)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <button (click)="deleteElement(produto.id)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
           <mat-icon  [ngStyle]="{'color':'red'}">delete</mat-icon>
         </button>
-        <button (click)="openViewsDialog()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <button (click)="openViewsDialog(produto)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
           <mat-icon  [ngStyle]="{'color':'green'}">pageview</mat-icon>
         </button>
 

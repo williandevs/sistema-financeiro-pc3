@@ -48,6 +48,10 @@ export class Pagina1Component implements OnInit {
 
     });
 
+
+
+
+
     dialogRef.afterClosed().subscribe(result => {
       if (result && result.id) {
 
@@ -60,11 +64,19 @@ export class Pagina1Component implements OnInit {
   }
 
 
-  openViewsDialog() {
-    const dialogRef = this.dialog.open(DialogViewsComponent);
+  openViewsDialog(prod?: ProdutoModel) {
+      const dialogRef = this.dialog.open(DialogViewsComponent, {
+      width: '1000px',
+      data: { produto: prod }
 
+    }); 
+
+
+
+    
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+    
       
       
     });
